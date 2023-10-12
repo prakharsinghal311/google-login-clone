@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./App.css";
-// import Header from "./Header";
-// import LoginForm from "./LoginForm";
-// import Footer from "./Footer";
 
 function App() {
+  const login1 = useRef();
+  const login2 = useRef();
+  const translate = useRef();
+  const emailNextHandler = () => {
+    login1.current.className = "login-box hidden";
+    login2.current.className = "login-box-2";
+    translate.current.className = "new translate-x-0 transition-transform";
+  };
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="container w-[450px] h-[500px] border border-1 border-gray-200 shadow-sm rounded-md p-10 overflow-hidden">
-        <div className="login-box hidden">
+        <div className="login-box" ref={login1}>
           <div className="logo">
             <h2 className="text-2xl tracking-[-.09rem] text-center">
               <span className="text-blue-600 font-medium">G</span>
@@ -45,12 +50,15 @@ function App() {
             <button className="left text-[#1a73e8] py-2 px-2 hover:bg-blue-50">
               create account
             </button>
-            <button className="right bg-[#1a73e8] py-1.5 px-5 text-white rounded-md text-lg ac-btn">
+            <button
+              className="right bg-[#1a73e8] py-1.5 px-5 text-white rounded-md text-lg ac-btn"
+              onClick={emailNextHandler}
+            >
               Next
             </button>
           </div>
         </div>
-        <div className="login-box-2">
+        <div className="login-box-2 opacity-0" ref={login2}>
           <div className="logo">
             <h2 className="text-2xl tracking-[-.09rem] text-center">
               <span className="text-blue-600 font-medium">G</span>
@@ -66,7 +74,10 @@ function App() {
             xyzabc@gmail.com
           </div>
           <p className="text mt-6 ml-2">To continue, first verify it's you</p>
-          <div className="new">
+          <div
+            className="new translate-x-[30rem] transition-transform"
+            ref={translate}
+          >
             <div className="input-box mt-6">
               <input
                 type="text"
@@ -90,9 +101,6 @@ function App() {
           </div>
         </div>
       </div>
-      {/* <Header /> */}
-      {/* <LoginForm /> */}
-      {/* <Footer /> */}
     </div>
   );
 }
