@@ -27,13 +27,13 @@ function App() {
             <input
               type="text"
               placeholder="Email or phone"
-              className="w-full border border-1 border-gray-400 rounded-md p-2 text-lg"
+              className="w-full border border-1 border-gray-400 rounded-md p-2.5 text-lg placeholder:text-gray-700"
             />
-            <p className="mt-1 capitalize text-[#1a73e8]">
+            <p className="capitalize text-[#1a73e8] p-1">
               <a href="#">forget email?</a>
             </p>
           </div>
-          <div className="down-text mt-5">
+          <div className="down-text mt-8">
             <p className="text-sm">
               Not your computer? Use Guest mode to sign in privately.
             </p>
@@ -42,8 +42,10 @@ function App() {
             </a>
           </div>
           <div className="btn-box mt-5 flex justify-between">
-            <button className="left ">create account</button>
-            <button className="right bg-[#1a73e8] py-2 px-4 text-white rounded-md text-lg">
+            <button className="left text-[#1a73e8] py-2 px-2 hover:bg-blue-200">
+              create account
+            </button>
+            <button className="right bg-[#1a73e8] py-1.5 px-5 text-white rounded-md text-lg">
               Next
             </button>
           </div>
