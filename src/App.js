@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 // import * as React from 'react';
 // import Box from '@mui/material/Box';
 // import TextField from '@mui/material/TextField';
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 import "./App.css";
 import ValidationTextFields from "./ValidationTextFields";
 
@@ -67,12 +69,15 @@ function App() {
             <button className="left text-[#1a73e8] py-2 px-2 hover:bg-blue-50">
               create account
             </button>
-            <button
+            {/* <button
               className="right bg-[#1a73e8] py-1.5 px-5 text-white rounded-md text-lg ac-btn"
               onClick={emailNextHandler}
             >
               Next
-            </button>
+            </button> */}
+            <Button onClick={emailNextHandler} variant="contained" size="small">
+              Next
+            </Button>
           </div>
         </div>
         <div className="login-box-2 opacity-0" ref={login2}>
@@ -112,9 +117,12 @@ function App() {
               <button className="left text-[#1a73e8] py-2 px-2 hover:bg-blue-50 capitalize">
                 forgot password?
               </button>
-              <button className="right bg-[#1a73e8] py-1.5 px-5 text-white rounded-md text-lg">
+              {/* <button className="right bg-[#1a73e8] py-1.5 px-5 text-white rounded-md text-lg">
                 Next
-              </button>
+              </button> */}
+              <Button variant="contained" size="small">
+                Next
+              </Button>
             </div>
           </div>
         </div>
